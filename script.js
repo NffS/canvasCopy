@@ -45,11 +45,11 @@ PDFJS.getDocument('pdf.pdf').then(function (pdf) {
             var myContext = myCanvas.getContext('2d');
 
             console.log(store);
-            var rawLength=JSON.stringify(raw).length;
-            var storeLength=JSON.stringify(store).length;
+            var rawLength = JSON.stringify(raw).length;
+            var storeLength = JSON.stringify(store).length;
             console.log("Raw length: " + rawLength);
             console.log("Store length: " + storeLength);
-            console.log("Less on : " + ((1-storeLength/rawLength)*100).toFixed(2)+"%");
+            console.log("Less on: " + ((1 - storeLength / rawLength) * 100).toFixed(2) + "%");
             store.forEach(function (item, i, arr) {
                 if (i == 0) {
                     myCanvas.height = item.data.height;

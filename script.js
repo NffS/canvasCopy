@@ -46,7 +46,9 @@ PDFJS.getDocument('pdf.pdf').then(function (pdf) {
 
             console.log(store);
             var rawLength = JSON.stringify(raw).length;
-            var storeLength = JSON.stringify(store).length;
+            var storeLength = JSON.stringify(store, function(key, val) {
+                return val.toFixed ? Number(val.toFixed(3)) : val;
+            }).length;
             console.log("Raw length: " + rawLength);
             console.log("Store length: " + storeLength);
             console.log("Less on: " + ((1 - storeLength / rawLength) * 100).toFixed(2) + "%");
